@@ -1,0 +1,42 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.senai.controller.ZoologicoControlloer"
+      stylesheets="@styles/zoologico.css"
+      styleClass="zoo-root">
+
+    <Label text="ZOOLÓGICO VIRTUAL" styleClass="titulo"/>
+
+    <HBox styleClass="form-row">
+        <Label text="Nome:"/>
+        <TextField fx:id="txtNome" promptText="Ex.: Rex" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox styleClass="form-row">
+        <Label text="Idade:"/>
+        <TextField fx:id="txtIdade" promptText="Ex.: 3" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox styleClass="form-row">
+        <Label text="Tipo:"/>
+        <ComboBox fx:id="cmbTipo" promptText="Selecione"/>
+    </HBox>
+
+    <HBox styleClass="button-row">
+        <Button text="Cadastrar" onAction="#onAdicionar" styleClass="btn-primary"/>
+        <Button text="Emitir Som" onAction="#onEmitirSom" styleClass="btn-primary"/>
+    </HBox>
+
+    <ListView fx:id="lstAnimais" styleClass="lista"/>
+
+    <TextArea fx:id="txtSaida"
+              editable="false"
+              styleClass="saida"/>
+</VBox>
