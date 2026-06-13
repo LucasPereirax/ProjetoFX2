@@ -7,6 +7,7 @@ public class Animal {
     //Atributos
     String nome;
     int idade;
+    String arquivoSom;
 
     public Animal() {}
 
@@ -16,9 +17,9 @@ public class Animal {
     }
 
     //Metodos
-    void emitirSom(){
+    public void emitirSom(){
 
-    };
+    }
 
     public String toString(){
         return "Nome: " + nome + " Idade: " + idade + " (" + getClass().getSimpleName() + ")";

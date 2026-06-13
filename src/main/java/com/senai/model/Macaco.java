@@ -2,13 +2,9 @@ package com.senai.model;
 
 public class Macaco extends Animal{
     public  Macaco (String nome, int idade){
-        this.nome = nome;
-        this.idade = idade;
+        super(nome, idade);
     }
-    @Override
-    void emitirSom(){
 
-    }
 
 
 }

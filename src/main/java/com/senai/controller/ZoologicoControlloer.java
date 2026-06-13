@@ -8,7 +8,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.media.AudioClip;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ZoologicoControlloer {
@@ -65,6 +67,18 @@ public class ZoologicoControlloer {
     }
 
     public void onEmitirSom() {
+        if (animais == null){
+            System.out.println("Selecione um animal para emitir o som");
+        }else {
+            Animal animal = lstAnimais.getSelectionModel().getSelectedItem();
+            String tipo = animal.getClass().getSimpleName().toLowerCase();
+            String endereco = "/com/senai/sons/" + tipo + ".mp3";
+
+            URL destino = getClass().getResource(endereco);
+
+            AudioClip som = new AudioClip(destino.toExternalForm());
+            som.play();
+        }
 
     }
 }
